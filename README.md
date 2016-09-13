@@ -10,3 +10,4 @@ The app adds a small icon to Google Docs that allows toggling between a side-by-
 ## Known issues:
 
 - Editing does not work well when side-by-side view is engaged.
+- Sometimes the text for the second page will not display until you scroll.

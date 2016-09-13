@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "side_by_side_gdocs.js",
+  "name": "Side-by-side view for Google Docs",
   "description": "Bring a side-by-side view toggler to Google Docs.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "content_scripts": [{
     "run_at": "document_end",
     "matches": [

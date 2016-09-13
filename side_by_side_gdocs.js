@@ -1,5 +1,5 @@
 // @flow
-/*! side_by_side_gdocs.js v0.1.0 by ryanpcmcquen */
+/*! side_by_side_gdocs.js v0.1.1 by ryanpcmcquen */
 const docsToolbar = document.querySelector('#docs-side-toolbar');
 
 window.setTimeout(() => {

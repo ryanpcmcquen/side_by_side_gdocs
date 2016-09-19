@@ -1,5 +1,5 @@
 // @flow
-/*! side_by_side_gdocs.js v0.1.3 by ryanpcmcquen */
+/*! side_by_side_gdocs.js v0.1.4 by ryanpcmcquen */
 const docsToolbar = document.querySelector('#docs-side-toolbar');
 
 window.setTimeout(() => {
@@ -16,14 +16,18 @@ window.setTimeout(() => {
       let comments = [...document.querySelectorAll('.docos-layout-anchored .docos-anchoreddocoview')];
       pages.map((ignore, i) => {
         if (pages[i].style.marginLeft) {
-          // Reset case:
-          pages[i].style.marginLeft = '';
-          pages[i].style.float = 'none';
           comments.map((i) => {
             i.style.display = 'block';
           });
+          // Reset case:
+          pages[i].style.marginLeft = '';
+          pages[i].style.float = 'none';
         } else {
           // Two-page view!
+          comments.map((i) => {
+            i.style.display = 'none';
+          });
+
           if (i % 2) {
             // Odd pages:
             pages[i].style.marginLeft = `${window.innerWidth / 4}px`;
@@ -32,16 +36,11 @@ window.setTimeout(() => {
             pages[i].style.marginLeft = `-${window.innerWidth / 4}px`;
             pages[i].style.float = 'left';
           }
-          comments.map((i) => {
-            i.style.display = 'none';
-          });
         }
       });
     });
-
-
   } else {
     return false;
   }
 
-}, 1000);
+}, 100);

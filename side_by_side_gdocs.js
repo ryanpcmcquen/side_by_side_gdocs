@@ -1,11 +1,9 @@
 // @flow
-/*! side_by_side_gdocs.js v0.1.1 by ryanpcmcquen */
+/*! side_by_side_gdocs.js v0.1.2 by ryanpcmcquen */
 const docsToolbar = document.querySelector('#docs-side-toolbar');
 
 window.setTimeout(() => {
-  if (docsToolbar) {
-
-    const pages = [...document.querySelectorAll('.kix-page')];
+  if (docsToolbar && window.innerWidth > 1631) {
 
     docsToolbar.innerHTML = docsToolbar.innerHTML + '\
   <button id="two_page_view_toggler" title="Toggle side-by-side view." style="position: absolute; right: 7px; top: 7px;">\
@@ -14,6 +12,7 @@ window.setTimeout(() => {
 ';
 
     document.querySelector('#two_page_view_toggler').addEventListener('click', () => {
+      let pages = [...document.querySelectorAll('.kix-page')];
       pages.map((ignore, i) => {
         if (pages[i].style.marginLeft) {
           // Reset case:

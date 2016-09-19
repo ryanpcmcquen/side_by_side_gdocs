@@ -1,5 +1,5 @@
 // @flow
-/*! side_by_side_gdocs.js v0.1.2 by ryanpcmcquen */
+/*! side_by_side_gdocs.js v0.1.3 by ryanpcmcquen */
 const docsToolbar = document.querySelector('#docs-side-toolbar');
 
 window.setTimeout(() => {
@@ -13,11 +13,15 @@ window.setTimeout(() => {
 
     document.querySelector('#two_page_view_toggler').addEventListener('click', () => {
       let pages = [...document.querySelectorAll('.kix-page')];
+      let comments = [...document.querySelectorAll('.docos-layout-anchored .docos-anchoreddocoview')];
       pages.map((ignore, i) => {
         if (pages[i].style.marginLeft) {
           // Reset case:
           pages[i].style.marginLeft = '';
           pages[i].style.float = 'none';
+          comments.map((i) => {
+            i.style.display = 'block';
+          });
         } else {
           // Two-page view!
           if (i % 2) {
@@ -28,9 +32,13 @@ window.setTimeout(() => {
             pages[i].style.marginLeft = `-${window.innerWidth / 4}px`;
             pages[i].style.float = 'left';
           }
+          comments.map((i) => {
+            i.style.display = 'none';
+          });
         }
       });
     });
+
 
   } else {
     return false;

@@ -13,3 +13,4 @@ The app adds a small icon to Google Docs that allows toggling between a side-by-
 - Editing does not work well when side-by-side view is engaged.
 - Sometimes the text for the second page will not display until you scroll.
 - 1632 or greater resolution is required (width-wise). The plugin detects this and will not add the toggle button on incompatible resolutions. <https://github.com/ryanpcmcquen/side_by_side_gdocs/issues/1>
+- Comments seem to cause display issues, for that reason, they are hidden when the extension is active.
